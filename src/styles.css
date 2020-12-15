@@ -20,9 +20,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   align-items: center;
 }
 
-.padding-sm {
-  padding-left: 5%;
-  padding-right: 5%;
+.padding-sm-lr {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
+.no-padding {
+  padding: 0 !important;
+}
 
+.margin-md-r {
+  padding-right: 1rem;
+}
+
+.scale-big {
+  transform: scale(1.5);
+}

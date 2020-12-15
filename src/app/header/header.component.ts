@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {environment} from '../../environments/environment';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +6,13 @@ import {environment} from '../../environments/environment';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  @Input()
   headerTitle: string;
-  constructor() { }
+  @Input()
+  iconName: string;
+  constructor() {}
 
   ngOnInit(): void {
-    this.headerTitle = environment.appName;
   }
 
 }
