@@ -11,6 +11,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: chocolate;
 }
 
+.bg-color-black {
+  background-color: black;
+}
+
 .full-height {
   height: 100%;
 }
@@ -36,3 +40,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .scale-big {
   transform: scale(1.5);
 }
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.sm-padding-btm {
+  padding-bottom: 2rem;
+}
+
+

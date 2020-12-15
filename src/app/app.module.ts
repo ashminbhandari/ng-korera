@@ -8,11 +8,16 @@ import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { NavComponent } from './nav/nav.component';
+import { DrawerComponent } from './drawer/drawer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    NavComponent,
+    DrawerComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,6 +26,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatToolbarModule,
     MatIconModule,
     MatDividerModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
