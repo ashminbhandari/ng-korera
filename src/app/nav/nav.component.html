@@ -1,9 +1,12 @@
 <mat-sidenav-container fullscreen>
   <app-header iconName="dashboard" headerTitle="Resource Management"></app-header>
-  <button class="nav-sidenav-toggle-btn position-fixed" (click)="drawer.toggle()">
+  <button class="nav-sidenav-toggle-btn position-fixed margin-md-top" (click)="drawer.toggle()">
     <mat-icon>keyboard_arrow_right</mat-icon>
   </button>
   <mat-sidenav #drawer mode="side" class="bg-color-black full-height no-border" id="sidenav">
     <app-drawer></app-drawer>
   </mat-sidenav>
+  <section>
+    <app-signup></app-signup>
+  </section>
 </mat-sidenav-container>

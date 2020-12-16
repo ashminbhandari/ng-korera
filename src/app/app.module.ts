@@ -11,6 +11,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { NavComponent } from './nav/nav.component';
 import { DrawerComponent } from './drawer/drawer.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DrawerComponent } from './drawer/drawer.component';
     HeaderComponent,
     NavComponent,
     DrawerComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

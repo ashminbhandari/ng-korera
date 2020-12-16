@@ -8,12 +8,11 @@ import {Component, HostListener} from '@angular/core';
 export class AppComponent {
   title = 'ng-korera';
   windowWidth: number;
-  windowHeight: number;
   @HostListener('window:resize', ['$event'])
-  onResize(event): void {
-    this.windowWidth = event.target.innerWidth;
-    this.windowHeight = event.target.innerHeight;
-    console.log(this.windowHeight);
-    console.log(this.windowHeight);
+  onResize(): void {
+    this.windowWidth = window.innerWidth;
+  }
+  constructor() {
+    this.onResize();
   }
 }
