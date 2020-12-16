@@ -57,4 +57,37 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding-bottom: 2rem;
 }
 
+.sm-padding-top {
+  padding-top: 2rem;
+}
+
+.no-border {
+  border: none;
+}
+
+.lg-font {
+  font-size: 0.9rem;
+}
+
+.margin-sm {
+  margin: 0.5rem;
+}
+
+.margin-sm-top {
+  margin-top: 1.5rem;
+}
+
+.tiny-margin-left {
+  margin-left:1rem;
+}
+
+.on-hover-accent-color:hover {
+  color: chocolate;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+
 
