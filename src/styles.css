@@ -22,6 +22,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .center-align-vertically {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .padding-sm-lr {
@@ -33,12 +34,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding: 0 !important;
 }
 
+.no-margin {
+  margin: 0 !important;
+}
+
 .margin-md-r {
-  padding-right: 1rem;
+  margin-right: 1rem;
+}
+
+.margin-lg-r {
+  margin-right: 2.5rem;
 }
 
 .scale-big {
   transform: scale(1.5);
+}
+
+.scale-bigger {
+  transform: scale(2.5);
 }
 
 .position-relative {
@@ -88,6 +101,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .cursor-pointer {
   cursor: pointer;
 }
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center-text-align {
+  text-align: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
 
 
 

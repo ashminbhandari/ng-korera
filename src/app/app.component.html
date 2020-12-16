@@ -1,1 +1,11 @@
-<app-nav></app-nav>
+<div *ngIf="windowWidth > 900 || windowWidth == undefined; else elseBlock">
+  <app-header iconName="dashboard" headerTitle="Resource Management"></app-header>
+  <app-nav></app-nav>
+</div>
+
+<div class="full-height bg-color-accent center-align-vertically flex-column" #elseBlock>
+  <mat-icon class="text-white scale-bigger">dashboard</mat-icon>
+  <h1 class="text-white sm-padding-top">Browser size not supported.</h1>
+</div>
+
+

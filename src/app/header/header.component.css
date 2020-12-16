@@ -2,3 +2,11 @@
   border-top-color: #3b3b3b;
 }
 
+.spacer {
+  flex: 1;
+}
+
+.set-min-width-lg {
+  min-width: 20rem;
+}
+

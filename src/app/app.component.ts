@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-korera';
+  windowWidth: number;
+  windowHeight: number;
+  @HostListener('window:resize', ['$event'])
+  onResize(event): void {
+    this.windowWidth = event.target.innerWidth;
+    this.windowHeight = event.target.innerHeight;
+    console.log(this.windowHeight);
+    console.log(this.windowHeight);
+  }
 }
