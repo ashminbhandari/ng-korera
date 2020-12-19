@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   appName: 'Resource Management',
+  apiUrl: 'http://localhost:8086'
 };
 
 /*
