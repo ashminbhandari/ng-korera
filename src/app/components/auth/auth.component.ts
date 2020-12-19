@@ -3,11 +3,11 @@ import {User} from '../../model/user';
 import {AuthService} from '../../services/auth.service';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-auth',
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.css']
 })
-export class SignupComponent implements OnInit {
+export class AuthComponent implements OnInit {
   constructor(private authService: AuthService) {
   }
 

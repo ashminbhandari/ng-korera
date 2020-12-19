@@ -11,7 +11,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { NavComponent } from './components/nav/nav.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
-import { SignupComponent } from './components/signup/signup.component';
+import { AuthComponent } from './components/auth/auth.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
@@ -21,7 +21,7 @@ import {HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     NavComponent,
     DrawerComponent,
-    SignupComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
