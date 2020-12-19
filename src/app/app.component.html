@@ -1,10 +1,12 @@
-<div *ngIf="windowWidth > 1100 || windowWidth == undefined; else elseBlock">
+<mat-sidenav-container fullscreen>
   <app-header iconName="dashboard" headerTitle="Resource Management"></app-header>
-  <app-nav></app-nav>
-</div>
-<div class="full-height bg-color-accent center-align-vertically flex-column" #elseBlock>
-  <mat-icon class="text-white scale-bigger">dashboard</mat-icon>
-  <h1 class="text-white sm-padding-top">Browser size not supported.</h1>
-</div>
-
-
+  <button class="nav-sidenav-toggle-btn position-fixed margin-md-top" (click)="drawer.toggle()">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+  <mat-sidenav #drawer mode="side" class="bg-color-black full-height no-border" id="sidenav">
+    <app-drawer></app-drawer>
+  </mat-sidenav>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+</mat-sidenav-container>

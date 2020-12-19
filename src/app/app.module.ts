@@ -9,19 +9,20 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { NavComponent } from './components/nav/nav.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
 import { AuthComponent } from './components/auth/auth.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {AppRoutingModule} from './app-routing.module';
+import { ResourceComponent } from './components/resource/resource.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavComponent,
     DrawerComponent,
     AuthComponent,
+    ResourceComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +34,7 @@ import {HttpClientModule} from '@angular/common/http';
     MatDividerModule,
     MatSidenavModule,
     FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -38,7 +38,6 @@ export class AuthComponent implements OnInit {
     this.error = '';
     this.success = '';
     this.authService.login(this.model).subscribe(res => {
-      console.log(res);
       this.success = 'Login successful.';
     }, err => {
       console.log(err);

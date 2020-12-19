@@ -12,4 +12,7 @@ export class User {
     type?: string,
   ) {
   }
+  setToken(token): void {
+    this.token = token;
+  }
 }

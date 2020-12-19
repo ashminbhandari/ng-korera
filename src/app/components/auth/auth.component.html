@@ -1,6 +1,6 @@
 <div class="screen-center">
   <div class="card" style="width: 25rem">
-    <h2 class="card-header center-text-align">Sign Up</h2>
+    <h2 class="card-header center-text-align">Authentication</h2>
     <div class="card-body">
       <form #userForm="ngForm">
         <div class="form-outline mb-4">
@@ -23,7 +23,7 @@
             Password is required
           </div>
         </div>
-        <button class="btn btn-block btn-primary" type="submit" [disabled]="!userForm.form.valid" (click)="onSignUp()">Sign Up</button>
+        <button class="btn btn-block btn-primary" type="submit" [disabled]="!userForm.form.valid" (click)="onSignUp()">Register</button>
         <br>
         <button class="btn btn-block btn-primary" type="submit" [disabled]="!userForm.form.valid" (click)="onLogin()">Login</button>
         <div [hidden]="!error" class="alert alert-danger margin-sm-top">

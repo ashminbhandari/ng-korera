@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 import { User } from '../model/user';
@@ -28,6 +29,11 @@ export class AuthService {
 
   // tslint:disable-next-line:typedef
   login(user: User) {
-    return this.http.post(`${environment.apiUrl}/login`, user, {responseType: 'text'});
+    // tslint:disable-next-line:no-shadowed-variable
+    return this.http.post(`${environment.apiUrl}/login`, user, {responseType: 'text'}).pipe(map(token => {
+      user.setToken(token);
+      localStorage.setItem('user', JSON.stringify(user));
+      return user;
+    }));
   }
 }
