@@ -3,6 +3,8 @@ export class User {
   password: string;
   id: number;
   token: string;
+  creationTime: string;
+  type: string;
   constructor(
     username: string,
     password: string,

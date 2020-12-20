@@ -37,7 +37,7 @@ export class AuthComponent implements OnInit {
       console.log(res);
       this.success = 'Your account has been successfully created.';
     }, err => {
-      console.log(err);
+      console.error(err);
       this.error = 'Sorry, the account could not be created.';
     });
   }
@@ -49,7 +49,7 @@ export class AuthComponent implements OnInit {
       this.success = 'Login successful.';
       this.router.navigate(['/resources']);
     }, err => {
-      console.log(err);
+      console.error(err);
       this.error = 'Sorry, your credentials are incorrect.';
     });
   }

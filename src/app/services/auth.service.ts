@@ -22,6 +22,16 @@ export class AuthService {
     return this.userSubject.value;
   }
 
+  public fetchProfileInfo(): void {
+    this.http.get(`${environment.apiUrl}/profile`, {responseType: 'text'}).subscribe(data => {
+      const json = JSON.parse(data);
+      this.userValue.id = json.id;
+      this.userValue.creationTime = json.creationTime;
+      this.userValue.type = json.type;
+      console.log(this.userValue);
+    });
+  }
+
   // tslint:disable-next-line:typedef
   register(user: User) {
     return this.http.post(`${environment.apiUrl}/signup`, user, {responseType: 'text'});
@@ -31,15 +41,15 @@ export class AuthService {
   login(user: User) {
     // tslint:disable-next-line:no-shadowed-variable
     return this.http.post(`${environment.apiUrl}/login`, user, {responseType: 'text'}).pipe(map(token => {
-      user.setToken(token);
+      user.setToken(JSON.parse(token).token);
       localStorage.setItem('user', JSON.stringify(user));
       this.userSubject.next(user);
+      this.fetchProfileInfo();
       return user;
     }));
   }
 
   isAuthenticated(): boolean {
-    console.log(this.userSubject.value);
     if (this.userValue && this.userValue.token) { return true; }
     else {
       return false;

@@ -5,14 +5,16 @@
       <mat-icon class="margin-md-r scale-big">{{iconName}}</mat-icon>
       <span class="font-lg-rvw">{{headerTitle}}</span>
     </div>
-    <div class="set-min-width-lg center-text-align">
-      Project 1
-    </div>
-    <div class="right-text-align set-min-width-lg dropdown">
-      <mat-icon class="scale-big margin-lg-r cursor-pointer" data-toggle="dropdown" routerLink="/auth">person_pin</mat-icon>
-      <div class="dropdown-menu">
-        <h1 class="center-text-align text-white">Normal User</h1>
-        <button class="dropdown-item text-white" type="button">Logout</button>
+    <div *ngIf="user">
+      <div class="right-text-align">
+        <mat-icon class="scale-big margin-lg-r cursor-pointer" data-toggle="dropdown" routerLink="/auth">person_pin
+        </mat-icon>
+        <div class="dropdown-menu no-padding">
+          <h1 class="no-padding text-center text-white">{{user.username}}</h1>
+          <p class="font-weight-normal no-padding no-margin text-center text-white">Member since</p>
+          <p class="font-weight-normal padding-sm-lr text-center text-white">{{user.creationTime}}</p>
+          <button class="dropdown-item btn btn-primary btn-block no-margin p-2 text-white text-center mb-0" type="button">Logout</button>
+        </div>
       </div>
     </div>
   </mat-toolbar-row>
