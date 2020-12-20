@@ -9,3 +9,12 @@
 #header {
   border-bottom: 1px solid #3b3b3b;
 }
+
+.dropdown-menu {
+  background-color: black;
+}
+
+.dropdown-item:hover {
+  background-color: transparent !important;
+  color: #f66c06 !important;
+}

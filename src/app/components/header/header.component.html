@@ -8,9 +8,12 @@
     <div class="set-min-width-lg center-text-align">
       Project 1
     </div>
-    <div class="right-text-align set-min-width-lg">
-      <mat-icon class="scale-big margin-lg-r cursor-pointer" routerLink="/auth">person_pin</mat-icon>
-      <mat-icon class="scale-big">info</mat-icon>
+    <div class="right-text-align set-min-width-lg dropdown">
+      <mat-icon class="scale-big margin-lg-r cursor-pointer" data-toggle="dropdown" routerLink="/auth">person_pin</mat-icon>
+      <div class="dropdown-menu">
+        <h1 class="center-text-align text-white">Normal User</h1>
+        <button class="dropdown-item text-white" type="button">Logout</button>
+      </div>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

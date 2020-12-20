@@ -3,13 +3,11 @@ export class User {
   password: string;
   id: number;
   token: string;
-  type: string;
   constructor(
     username: string,
     password: string,
     id?: number,
     token?: string,
-    type?: string,
   ) {
   }
   setToken(token): void {

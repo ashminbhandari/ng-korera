@@ -95,7 +95,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .on-hover-accent-color:hover {
-  color: chocolate;
+  color: chocolate !important;
 }
 
 .cursor-pointer {

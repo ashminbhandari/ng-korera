@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../../model/user';
 import {AuthService} from '../../services/auth.service';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -8,7 +9,14 @@ import {AuthService} from '../../services/auth.service';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  constructor(private authService: AuthService) {
+  constructor(
+    private authService: AuthService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/resources']);
+    }
   }
 
   error: string;
@@ -39,6 +47,7 @@ export class AuthComponent implements OnInit {
     this.success = '';
     this.authService.login(this.model).subscribe(res => {
       this.success = 'Login successful.';
+      this.router.navigate(['/resources']);
     }, err => {
       console.log(err);
       this.error = 'Sorry, your credentials are incorrect.';

@@ -33,7 +33,16 @@ export class AuthService {
     return this.http.post(`${environment.apiUrl}/login`, user, {responseType: 'text'}).pipe(map(token => {
       user.setToken(token);
       localStorage.setItem('user', JSON.stringify(user));
+      this.userSubject.next(user);
       return user;
     }));
+  }
+
+  isAuthenticated(): boolean {
+    console.log(this.userSubject.value);
+    if (this.userValue && this.userValue.token) { return true; }
+    else {
+      return false;
+    }
   }
 }
