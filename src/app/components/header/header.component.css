@@ -8,6 +8,7 @@
 
 #header {
   border-bottom: 1px solid #3b3b3b;
+  z-index: 1;
 }
 
 .dropdown-menu {

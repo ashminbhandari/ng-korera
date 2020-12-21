@@ -1,17 +1,25 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {NgxCsvParser, NgxCSVParserError} from "ngx-csv-parser";
+import {Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+import {NgxCsvParser, NgxCSVParserError} from 'ngx-csv-parser';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-resource',
   templateUrl: './resource.component.html',
   styleUrls: ['./resource.component.css']
 })
-export class ResourceComponent implements OnInit {
-  csvRecords: any[] = [];
-  headers: string[] = [];
+export class ResourceComponent implements OnInit, AfterViewInit {
+  displayedColumns: string[] = [];
+  dataSource = new MatTableDataSource<any>();
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor(private ngxCsvParser: NgxCsvParser) {
   }
 
+  // tslint:disable-next-line:typedef use-lifecycle-interface
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
   // Your applications input change listener for the CSV File
   fileChangeListener($event: any): void {
 
@@ -23,9 +31,9 @@ export class ResourceComponent implements OnInit {
       .pipe().subscribe((result: Array<any>) => {
 
       console.log('Result', result);
-      this.csvRecords = result;
+      this.dataSource.data = result;
       if (result) {
-        this.headers = Object.keys(result[0]);
+        this.displayedColumns = Object.keys(result[0]);
       }
     }, (error: NgxCSVParserError) => {
       console.log('Error', error);
@@ -35,3 +43,11 @@ export class ResourceComponent implements OnInit {
   ngOnInit(): void {
   }
 }
+
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+}
+

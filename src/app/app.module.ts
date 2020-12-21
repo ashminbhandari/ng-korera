@@ -18,6 +18,8 @@ import {ResourceComponent} from './components/resource/resource.component';
 import {JwtInterceptor} from './helper/jwt.interceptor';
 import {AuthGuardService} from './guards/auth-guard.service';
 import {RouterModule} from '@angular/router';
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import {RouterModule} from '@angular/router';
     MatSidenavModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
