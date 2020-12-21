@@ -145,5 +145,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-color: chocolate !important;
 }
 
+.bg-grey {
+  background-color: #d4d4d4;
+}
+
+.margin-lg-top {
+  margin-top: 7rem;
+}
 
 
